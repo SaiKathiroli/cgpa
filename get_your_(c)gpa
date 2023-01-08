@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class CGPA
+{
+    public static void main(String[] args)
+    {
+        Scanner ip = new Scanner(System.in);
+        System.out.println("HOW MANY SEMESTER RESULTS HAVE YOU RECEIVED?");
+        int N = ip.nextInt();
+        float Gd = 0;
+        float C = 0;
+        for(int i = 1; i<=N ; i++)
+        {
+            System.out.println("HOW MANY SUBJECTS DO YOU HAVE IN THE " + i + " th SEMESTER?");
+            int M = ip.nextInt();
+            float G = 0;
+            float den = 0;
+            for (int j = 1; j <= M; j++)
+            {
+                System.out.println("ENTER THE NUMBER OF CREDITS ALLOTED FOR " + j + "th SUBJECT");
+                int Y = ip.nextInt();
+                System.out.println("ENTER THE GRADE POINTS OBTAINED BY YOU IN THIS SUBJECT");
+                int U = ip.nextInt();
+                G = G + Y * U;
+                den = den + Y;
+            }
+            float why = G/den;
+            System.out.println("YOUR GPA FOR THE" + i + " SEMESTER IS " + why);
+            Gd = Gd + (why*den);
+            C =  C + den;
+        }
+
+        System.out.println("YOUR CGPA IS " + Gd/C);
+    }
+}
